@@ -1,2 +1,5 @@
-<pm-photo url="https://ci-prod.imgix.net/upload/paises/00200408.jpg?w=2520&fit=crop&auto=compress%2Cformat" description="Img1"></pm-photo>
-<pm-photo url="https://www.viajoteca.com/wp-content/uploads/2018/06/roteiro-canada-pexel-andre-scaled.jpg" description="Img2"></pm-photo>
+<pm-photo
+    *ngfor="let photo of photos"
+    [url]="photo.url"
+    [description]="photo.description">
+</pm-photo>
