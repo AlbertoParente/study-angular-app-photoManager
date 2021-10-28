@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    photos = [
-        {
-            url: "https://ci-prod.imgix.net/upload/paises/00200408.jpg?w=2520&fit=crop&auto=compress%2Cformat",
-            description: "Img1"
-        },
-        {
-            url: "https://www.viajoteca.com/wp-content/uploads/2018/06/roteiro-canada-pexel-andre-scaled.jpg",
-            description: "Img2"
-        },
-        {
-            url: "https://ci-prod.imgix.net/upload/paises/00200408.jpg?w=2520&fit=crop&auto=compress%2Cformat",
-            description: "Img1"
-        },
-        {
-            url: "https://www.viajoteca.com/wp-content/uploads/2018/06/roteiro-canada-pexel-andre-scaled.jpg",
-            description: "Img2"
-        }
-    ];
+    photos: Object[] = [];
+
+    constructor(http: HttpClient) {
+        http.get<Object[]>('http://localhost:3000/flavio/photos')
+            .subscribe(photos => this.photos = photos);
+    }
 }
