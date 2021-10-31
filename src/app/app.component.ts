@@ -7,7 +7,7 @@ import { PhotoService } from './photos/photo/photo.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    photos: any[] = [];
+    photos: Object[] = [];
 
     constructor(photoService: PhotoService) {
 
