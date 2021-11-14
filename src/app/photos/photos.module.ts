@@ -7,7 +7,7 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
 import { PhotosComponent } from './photo-list/photos/photos.component';
 import { FilterByDescription } from './photo-list/filter-by-description.pipe';
 
-@NgModule ({
+@NgModule({
     declarations: [
         PhotoComponent,
         PhotoListComponent,
