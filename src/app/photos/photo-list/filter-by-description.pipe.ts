@@ -3,6 +3,7 @@ import { Photo } from '../photo/photo';
 
 @Pipe({ name: 'filterByDescription' })
 export class FilterByDescription implements PipeTransform {
+
     transform(photos: Photo[], descriptionQuery: string) {
         descriptionQuery = descriptionQuery
             .trim()
@@ -15,5 +16,4 @@ export class FilterByDescription implements PipeTransform {
             return photos;
         }
     }
-
 }
