@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { Photo } from '../photo/photo';
-//import { PhotoService } from '../photo/photo.service';
+import { PhotoService } from '../photo/photo.service';
 
 @Component({
     selector: 'pm-photo-list',
@@ -21,7 +21,7 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
     constructor(
         private activatedRoute: ActivatedRoute,
-        //private photoService: PhotoService
+        private photoService: PhotoService
     ) { }
 
     ngOnInit() {
