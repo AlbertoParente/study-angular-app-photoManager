@@ -1,3 +1,3 @@
-<pm-search></pm-search>
+<pm-search (onTyping)="filter = $event" [value]="filter"></pm-search>
 <pm-photos [photos]="photos | filterByDescription: filter"></pm-photos>
 <pm-load-button (click)="load()" [hasMore]="hasMore"></pm-load-button>

@@ -4,7 +4,7 @@
 
 <ol class="list-unstyled">
     <li *ngfor="let cols of rows" class="row no-gutters">
-        <div *ngfor="let photo of cols" class="col-4">
+        <div *ngfor="let photo of cols" class="col-4" pmDarkenOnHouver>
             <pm-card [title]="photo.description">
                 <pm-photo [url]="photo.url" [description]="photo.description"></pm-photo>
                 <div class="text-center p-1">
