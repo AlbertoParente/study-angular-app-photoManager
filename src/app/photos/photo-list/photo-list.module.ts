@@ -9,7 +9,7 @@ import { CardModule } from 'src/app/shared/components/card/card.module';
 import { SearchComponent } from './photos/search/search.component';
 import { DarkenOnHouverModule } from 'src/app/shared/components/directives/darken-on-houver/darken-on-houver.module';
 
-@NgModule ({
+@NgModule({
     declarations: [
         PhotoListComponent,
         PhotosComponent,
@@ -25,4 +25,4 @@ import { DarkenOnHouverModule } from 'src/app/shared/components/directives/darke
     ]
 })
 
-export class PhotoListModule {}
+export class PhotoListModule { }

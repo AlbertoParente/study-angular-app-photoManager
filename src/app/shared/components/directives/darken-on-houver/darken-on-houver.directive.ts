@@ -9,7 +9,7 @@ export class DarkenOnHouverDirective {
 
     constructor(
         private el: ElementRef,
-        private render: Renderer) {}
+        private render: Renderer) { }
 
     @HostListener('mouseover')
     darkenOn() {

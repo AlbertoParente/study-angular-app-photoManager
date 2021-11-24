@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { PhotoFormComponent } from './photo-form.component';
 
 @NgModule({
-    declarations: [ PhotoFormComponent ],
-    imports: [ CommonModule ]
+    declarations: [PhotoFormComponent],
+    imports: [CommonModule]
 })
 
 export class PhotoFormModule { }

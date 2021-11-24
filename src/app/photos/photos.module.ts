@@ -12,4 +12,4 @@ import { PhotoListModule } from './photo-list/photo-list.module';
         CommonModule
     ]
 })
-export class PhotosModule {}
+export class PhotosModule { }

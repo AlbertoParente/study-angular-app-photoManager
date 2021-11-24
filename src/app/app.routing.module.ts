@@ -6,7 +6,8 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
-    { path: 'user/:userName', component: PhotoListComponent,
+    {
+        path: 'user/:userName', component: PhotoListComponent,
         resolve: {
             photos: PhotoListResolver
         }
