@@ -12,6 +12,6 @@ export class AuthService {
 
     authenticate(userName: string, password: string) {
 
-        return this.http.post(API_URL + '/user/login', { userName, password } )
+        return this.http.post(API_URL + '/user/login', { userName, password })
     }
 }
