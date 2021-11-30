@@ -1,2 +1,3 @@
 test commit test reset
-teste commit 3
+
+teste commit rest 2
