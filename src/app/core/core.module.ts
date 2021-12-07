@@ -5,4 +5,4 @@ import { headerComponent } from './header/header.component';
     declarations: [headerComponent],
     exports: [headerComponent]
 })
-export class CoreModule {}
+export class CoreModule { }
