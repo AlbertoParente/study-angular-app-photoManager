@@ -12,20 +12,28 @@ const routes: Routes = [
         redirectTo: 'home'
     },
     {
-        path: 'home'
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
     },
     {
-        path: 'user/:userName', component: PhotoListComponent,
+        path: 'user/:userName',
+        component: PhotoListComponent,
         resolve: { photos: PhotoListResolver }
     },
-    { path: 'p/add', component: PhotoFormComponent },
-    { path: '**', component: NotFoundComponent }
+    {
+        path: 'p/add',
+        component: PhotoFormComponent
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { useHash: true } )
+        RouterModule.forRoot(routes, { useHash: true })
     ],
-    exports: [ RouterModule ]
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
