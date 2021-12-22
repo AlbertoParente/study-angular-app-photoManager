@@ -7,7 +7,7 @@ const API_URL = "http://localhost:3000";
 @Injectable()
 export class SignUpService {
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     checkUserNameTaken(userName: string) {
 
