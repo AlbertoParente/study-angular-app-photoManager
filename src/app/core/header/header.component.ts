@@ -5,7 +5,7 @@ import { User } from '../user/user';
 import { UserService } from '../user/user.service';
 
 @Component({
-    selector: 'ap-header',
+    selector: 'pm-header',
     templateUrl: './header.component.html'
 })
 export class HeaderComponent {
