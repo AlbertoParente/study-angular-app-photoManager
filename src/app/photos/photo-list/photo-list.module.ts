@@ -8,6 +8,7 @@ import { PhotoModule } from '../photo/photo-module';
 import { CardModule } from 'src/app/shared/components/card/card.module';
 import { SearchComponent } from './photos/search/search.component';
 import { DarkenOnHouverModule } from 'src/app/shared/components/directives/darken-on-houver/darken-on-houver.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { DarkenOnHouverModule } from 'src/app/shared/components/directives/darke
         CommonModule,
         PhotoModule,
         CardModule,
-        DarkenOnHouverModule
+        DarkenOnHouverModule,
+        RouterModule
     ]
 })
 
