@@ -1,12 +1,12 @@
-<div class="bg-white border">
+<div class="bg-white border" *ngif="(photo$ | async) as photo">
     <div class="row">
         <div class="col-lg-8">
-            <ap-photo [url]="photo?.url" [description]="photo?.description"></ap-photo>
+            <ap-photo [url]="photo.url" [description]="photo.description"></ap-photo>
         </div>
 
         <div class="col-lg-4 p-4">
             <small>
-                <p class="text-left break-word">{{photo?.description}}</p>
+                <p class="text-left break-word">{{photo.description}}</p>
                 <hr>
             </small>
             <div class="mt-4">
