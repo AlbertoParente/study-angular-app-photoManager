@@ -4,10 +4,12 @@ import { PhotoComment } from "../../photo/photo-comment";
 import { Input } from "@angular/core";
 import { PhotoService } from "../../photo/photo.service";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
     selector: 'pm-photo-comments',
-    templateUrl: './photo-comment.component.html'
+    templateUrl: './photo-comment.component.html',
+    styleUrls: ['photo-comments.css']
 })
 export class PhotoCommentsComponent implements OnInit {
 
@@ -30,12 +32,12 @@ export class PhotoCommentsComponent implements OnInit {
 
     save() {
         const comment = this.commentForm.get('comment').value as string;
-        this.photoService
+        this.comments$ = this.photoService
             .addComment(this.photoId, comment)
-            .subscribe(() => {
+            .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
+            .pipe(tap(() => {
                 this.commentForm.reset();
                 alert('Comentário adicionado com sucesso');
-
-            })
+            }));
     }
 }
