@@ -13,7 +13,7 @@ import { TokenService } from '../token/token.service';
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
 
-    constructor(private tokenService: TokenService) { }
+    constructor(private tokenService: TokenService) { };
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent
         | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
@@ -25,8 +25,7 @@ export class RequestInterceptor implements HttpInterceptor {
                     'x-access-token': token
                 }
             });
-        }
+        };
         return next.handle(req);
-
-    }
-}
+    };
+};

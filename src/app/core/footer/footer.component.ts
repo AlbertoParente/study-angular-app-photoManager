@@ -10,9 +10,9 @@ import { UserService } from '../user/user.service';
 export class FooterComponent implements OnInit {
 
     user$: Observable<User>;
-    constructor(private userService: UserService) {}
+    constructor(private userService: UserService) { };
 
     ngOnInit(): void {
-     this.user$ = this.userService.getUser();
-    }
-}
+        this.user$ = this.userService.getUser();
+    };
+};

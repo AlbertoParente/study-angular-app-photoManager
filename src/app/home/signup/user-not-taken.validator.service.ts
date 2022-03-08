@@ -6,7 +6,7 @@ import { debounceTime, first, map, switchMap } from 'rxjs/operators';
 @Injectable()
 export class UserNotTakenValidatorService {
 
-    constructor(private signUpService: SignUpService) { }
+    constructor(private signUpService: SignUpService) { };
 
     checkUserNameTaken() {
 
@@ -19,6 +19,6 @@ export class UserNotTakenValidatorService {
                 ))
                 .pipe(map(isTaken => isTaken ? { userNameTaken: true } : null))
                 .pipe(first());
-        }
-    }
-}
+        };
+    };
+};

@@ -26,4 +26,4 @@ import { HeaderComponent } from './header/header.component';
         }
     ]
 })
-export class CoreModule { }
+export class CoreModule { };

@@ -18,10 +18,10 @@ export class HeaderComponent {
         private router: Router) {
 
         this.user$ = userService.getUser();
-    }
+    };
 
     logout() {
         this.userService.logout();
         this.router.navigate(['']);
-    }
-}
+    };
+};

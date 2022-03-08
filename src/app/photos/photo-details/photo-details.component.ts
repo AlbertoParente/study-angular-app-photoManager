@@ -11,8 +11,8 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoDetailsComponent implements OnInit {
 
-    photo$: Observable<Photo>
-    photoId: number
+    photo$: Observable<Photo>;
+    photoId: number;
 
     constructor(
         private route: ActivatedRoute,
@@ -21,21 +21,24 @@ export class PhotoDetailsComponent implements OnInit {
         private alertService: AlertService,
         private userService: UserService
 
-    ) { }
+    ) { };
     ngOnInit(): void {
-        this.photoId = this.route.snapshot.params.photoId
-        this.photo$ = this.photoService.findById(this.photoId)
-    }
+        this.photoId = this.route.snapshot.params.photoId;
+        this.photo$ = this.photoService.findById(this.photoId);
+        this.photo$.subscribe(() => { }, err => {
+            this.router.navigate(['not-found']);
+        });
+    };
 
     remove() {
         this.photoService
             .removePhoto(this.photoId)
             .subscribe(() => {
-                this.alertService.success('Photo removed!!!', true)
+                this.alertService.success('Photo removed!!!', true);
                 this.router.navigate(['/user', this.userService.getUserName]);
             },
                 err => {
                     this.alertService.warning('Could not delete the photo!!!', true);
                 });
-    }
-}
+    };
+};

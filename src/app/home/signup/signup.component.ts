@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
         private userNotTakenValidatorService: UserNotTakenValidatorService,
         private signUpService: SignUpService,
         private router: Router,
-        private platformDetectorService: PlatformDetectorService) { }
+        private platformDetectorService: PlatformDetectorService) { };
 
     ngOnInit(): void {
         this.signupForm = this.formBuilder.group({
@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
         });
         this.platformDetectorService.isPlatformBrowser() &&
             this.emailInput.nativeElement.focus();
-    }
+    };
 
     signup() {
         const newUser = this.signupForm.getRawValue() as NewUser;
@@ -67,5 +67,5 @@ export class SignUpComponent implements OnInit {
                 () => this.router.navigate(['']),
                 err => console.log(err)
             );
-    }
-}
+    };
+};

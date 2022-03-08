@@ -31,8 +31,12 @@ const routes: Routes = [
         component: PhotoFormComponent,
     },
     {
-        path: '**',
+        path: 'not-found',
         component: NotFoundComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'not-found'
     }
 ];
 
@@ -42,4 +46,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { };

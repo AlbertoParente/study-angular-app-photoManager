@@ -16,7 +16,7 @@ export class SignInComponent implements OnInit {
         private formBuilder: FormBuilder,
         private authService: AuthService,
         private router: Router,
-        private platformDetectorService: PlatformDetectorService) { }
+        private platformDetectorService: PlatformDetectorService) { };
 
     ngOnInit(): void {
         this.loginForm = this.formBuilder.group({
@@ -25,7 +25,7 @@ export class SignInComponent implements OnInit {
         });
         this.platformDetectorService.isPlatformBrowser() &&
             this.userNameInput.nativeElement.focus();
-    }
+    };
 
     login() {
         const userName = this.loginForm.get('userName').value;
@@ -42,5 +42,5 @@ export class SignInComponent implements OnInit {
                     alert('Invalid user name or password...!');
                 }
             );
-    }
-}
+    };
+};
