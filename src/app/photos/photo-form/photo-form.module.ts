@@ -20,4 +20,4 @@ import { ImmediateClickModule } from 'src/app/shared/directives/immediate-click/
     ]
 })
 
-export class PhotoFormModule { }
+export class PhotoFormModule { };

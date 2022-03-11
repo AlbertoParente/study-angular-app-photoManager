@@ -7,4 +7,4 @@ export interface Photo {
     likes: number;
     comments: number;
     userId: number;
-}
+};

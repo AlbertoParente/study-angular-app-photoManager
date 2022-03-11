@@ -21,14 +21,14 @@ export class PhotoCommentsComponent implements OnInit {
     constructor(
         private photoService: PhotoService,
         private formBuilder: FormBuilder
-    ) { }
+    ) { };
 
     ngOnInit(): void {
         this.comments$ = this.photoService.getComments(this.photoId);
         this.commentForm = this.formBuilder.group({
             comment: ['', Validators.maxLength(300)]
         });
-    }
+    };
 
     save() {
         const comment = this.commentForm.get('comment').value as string;
@@ -39,5 +39,5 @@ export class PhotoCommentsComponent implements OnInit {
                 this.commentForm.reset();
                 alert('Comentário adicionado com sucesso');
             }));
-    }
-}
+    };
+};

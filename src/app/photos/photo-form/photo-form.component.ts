@@ -11,9 +11,9 @@ import { PhotoService } from '../photo/photo.service';
     styleUrls: ['./photo-form.component.css']
 })
 export class PhotoFormComponent implements OnInit {
-    photoForm: FormGroup
-    file: File
-    preview: string
+    photoForm: FormGroup;
+    file: File;
+    preview: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -21,15 +21,15 @@ export class PhotoFormComponent implements OnInit {
         private router: Router,
         private alertService: AlertService,
         private userService: UserService
-    ) { }
+    ) { };
 
     ngOnInit() {
         this.photoForm = this.formBuilder.group({
             file: ['', Validators.required],
             description: ['', Validators.maxLength(300)],
             allowComments: [true]
-        })
-    }
+        });
+    };
 
     Upload() {
         const description = this.photoForm.get('description').value;
@@ -40,12 +40,12 @@ export class PhotoFormComponent implements OnInit {
                 this.alertService.success('Upload complete');
                 this.router.navigate(['/user', this.userService.getUserName()]);
             });
-    }
+    };
 
     handleFile(file: File) {
-        this.file = file
-        const reader = new FileReader()
-        reader.onload = (event: any) => this.preview = event.target.result
-        reader.readAsDataURL(file)
-    }
-}
+        this.file = file;
+        const reader = new FileReader();
+        reader.onload = (event: any) => this.preview = event.target.result;
+        reader.readAsDataURL(file);
+    };
+};

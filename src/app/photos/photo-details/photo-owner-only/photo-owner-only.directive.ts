@@ -14,7 +14,7 @@ export class PhotoOwnerOnlyDirective implements OnInit {
         private element: ElementRef<any>,
         private renderer: Renderer,
         private UserService: UserService
-    ) { }
+    ) { };
 
     ngOnInit(): void {
         this.UserService
@@ -24,5 +24,5 @@ export class PhotoOwnerOnlyDirective implements OnInit {
                     this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
                 }
             });
-    }
-}
+    };
+};
