@@ -5,4 +5,4 @@ import { DarkenOnHouverDirective } from './darken-on-houver.directive';
     declarations: [DarkenOnHouverDirective],
     exports: [DarkenOnHouverDirective]
 })
-export class DarkenOnHouverModule { }
+export class DarkenOnHouverModule { };

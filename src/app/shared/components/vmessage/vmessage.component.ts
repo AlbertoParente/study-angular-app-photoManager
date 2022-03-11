@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'pm-vmessage',
@@ -6,4 +6,4 @@ import { Component, Input } from '@angular/core'
 })
 export class VMessageComponent {
     @Input() text = '';
-}
+};

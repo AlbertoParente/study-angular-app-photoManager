@@ -16,4 +16,4 @@ export class showIfLoggedDirective implements OnInit {
         !this.userService.isLogged()
             && this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
     };
-}
+};

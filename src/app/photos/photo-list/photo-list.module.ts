@@ -27,4 +27,4 @@ import { RouterModule } from '@angular/router';
     ]
 })
 
-export class PhotoListModule { }
+export class PhotoListModule { };

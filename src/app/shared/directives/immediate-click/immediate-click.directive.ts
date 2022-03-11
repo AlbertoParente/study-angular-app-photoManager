@@ -8,10 +8,10 @@ export class immediateClickDirective implements OnInit {
 
     constructor(
         private element: ElementRef<any>,
-        private platFormDetector: PlatformDetectorService) { }
+        private platFormDetector: PlatformDetectorService) { };
 
     ngOnInit(): void {
         this.platFormDetector.isPlatformBrowser &&
             this.element.nativeElement.click();
-    }
-}
+    };
+};

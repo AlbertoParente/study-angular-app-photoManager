@@ -25,10 +25,10 @@ export class AlertComponent {
                 }
                 this.alerts.push(alert);
                 setTimeout(() => this.removeAlert(alert), this.timeout);
-            })
-    }
+            });
+    };
 
     removeAlert(alertToRemove: Alert) {
         this.alerts = this.alerts.filter(alert => alert != alertToRemove);
-    }
-}
+    };
+};

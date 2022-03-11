@@ -14,4 +14,4 @@ import { PhotoDetailsModule } from './photo-details/photo-details.module';
         PhotoDetailsModule
     ]
 })
-export class PhotosModule { }
+export class PhotosModule { };

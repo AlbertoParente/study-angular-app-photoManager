@@ -9,9 +9,8 @@ export class LoadButtonComponent implements OnInit {
 
     @Input() hasMore: boolean = false;
 
-    constructor() { }
+    constructor() { };
 
     ngOnInit() {
-    }
-
-}
+    };
+};

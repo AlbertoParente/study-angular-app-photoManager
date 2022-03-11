@@ -17,39 +17,39 @@ export class AlertService {
                     this.keepAfterRouteChange = false
                 } else {
                     this.clear();
-                }
-            }
+                };
+            };
         });
-    }
+    };
 
     success(message: string, keepAfterRouteChange: boolean = false) {
         this.alert(AlertType.SUCCESS, message, keepAfterRouteChange);
-    }
+    };
 
     warning(message: string, keepAfterRouteChange: boolean = false) {
         this.alert(AlertType.WARNING, message, keepAfterRouteChange);
-    }
+    };
 
     danger(message: string, keepAfterRouteChange: boolean = false) {
         this.alert(AlertType.DANGER, message, keepAfterRouteChange);
-    }
+    };
 
     info(message: string, keepAfterRouteChange: boolean = false) {
         this.alert(AlertType.INFO, message, keepAfterRouteChange);
-    }
+    };
 
     private alert(alertType: AlertType, message: string, keepAfterRouteChange: boolean) {
         this.keepAfterRouteChange = keepAfterRouteChange;
         this.alertSubject.next(new Alert(alertType, message));
-    }
+    };
 
     getAlert() {
         return this.alertSubject.asObservable();
-    }
+    };
 
     clear() {
         this.alertSubject.next(null);
-    }
+    };
 
     getAlertClass(alert: Alert) {
 
@@ -65,7 +65,6 @@ export class AlertService {
                 return 'alert alert-success'
             case AlertType.WARNING:
                 return 'alert alert-warning'
-
-        }
-    }
-}
+        };
+    };
+};

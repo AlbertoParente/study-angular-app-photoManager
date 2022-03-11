@@ -7,4 +7,4 @@ import { CommonModule } from "@angular/common";
     exports: [immediateClickDirective],
     imports: [CommonModule]
 })
-export class ImmediateClickModule { }
+export class ImmediateClickModule { };
