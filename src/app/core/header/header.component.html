@@ -1,6 +1,10 @@
 <header>
     <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand">Photo Manager</a>
+        <a class="navbar-brand">
+            <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+            Photo Manager
+        </a>
+        <pm-menu #menu></pm-menu>
         <div *ngIf="(user$ | async) as user; else login">
             <i class="fa fa-user-circle mr-1"></i>
             <a class="mr-1">{{ user.name }}</a>
