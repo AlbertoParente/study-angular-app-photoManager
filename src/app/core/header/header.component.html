@@ -4,6 +4,12 @@
             <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
             Photo Manager
         </a>
+        <pm-menu #menu>
+            <ul>
+                <li>Menu item 1</li>
+                <li>Menu item 2</li>
+            </ul>
+        </pm-menu>
         <pm-menu #menu></pm-menu>
         <div *ngIf="(user$ | async) as user; else login">
             <i class="fa fa-user-circle mr-1"></i>
