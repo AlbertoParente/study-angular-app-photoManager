@@ -1,13 +1,14 @@
 <header>
     <nav class="navbar navbar-light bg-white">
         <a class="navbar-brand">
-            <i (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+            <i tabindex="0" (keyup.space)="menu.toggle" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
             Photo Manager
         </a>
         <pm-menu #menu>
-            <ul>
-                <li>Menu item 1</li>
-                <li>Menu item 2</li>
+            <ul class="unstyled-list">
+                <li>
+                    <a showIfLogged [routerLink]="['p','add']">Upload</a>
+                </li>>
             </ul>
         </pm-menu>
         <pm-menu #menu></pm-menu>
