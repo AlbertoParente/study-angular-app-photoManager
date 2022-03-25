@@ -9,7 +9,8 @@
     </div>
     <div class="form-group">
         <input formControlName="fullName" class="form-control" placeholder="full name">
-        <pm-vmessage *ngIf="signupForm.get('fullName').errors?.required && form.submitted" text="Full name is required!">
+        <pm-vmessage *ngIf="signupForm.get('fullName').errors?.required && form.submitted"
+            text="Full name is required!">
         </pm-vmessage>
         <pm-vmessage *ngIf="signupForm.get('fullName').errors?.minlength && form.submitted" text="Minimum length is 2">
         </pm-vmessage>
@@ -37,6 +38,8 @@
         <pm-vmessage *ngIf="signupForm.get('password').errors?.minlength && form.submitted" text="Minimum length is 8">
         </pm-vmessage>
         <pm-vmessage *ngIf="signupForm.get('password').errors?.maxlength && form.submitted" text="Maximum length is 14">
+        </pm-vmessage>
+        <pm-vmessage *ngIf="signupForm.errors?.userNamePassword" text="Username and password must be different">
         </pm-vmessage>
     </div>
     <button class="btn btn-primary btn-block">Register</button>
