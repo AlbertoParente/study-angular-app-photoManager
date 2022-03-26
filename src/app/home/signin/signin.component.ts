@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
     ngOnInit(): void {
         this.activatedRoute
             .queryParams
-            .subscribe(params => this.fromUrl = params.fromUrl);
+            .subscribe(params => this.fromUrl = params['fromUrl']);
         this.loginForm = this.formBuilder.group({
             userName: ['', Validators.required],
             password: ['', Validators.required]
@@ -36,17 +36,21 @@ export class SignInComponent implements OnInit {
     login() {
         const userName = this.loginForm.get('userName').value;
         const password = this.loginForm.get('password').value;
+
         this.authService
             .authenticate(userName, password)
-            .subscribe(() =>
-                this.router.navigate(['user', userName]),
+            .subscribe(
+                () => this.fromUrl
+                    ? this.router.navigateByUrl(this.fromUrl)
+                    : this.router.navigate(['user', userName])
+                ,
                 err => {
                     console.log(err);
                     this.loginForm.reset();
                     this.platformDetectorService.isPlatformBrowser() &&
                         this.userNameInput.nativeElement.focus();
-                    alert('Invalid user name or password...!');
+                    alert('Invalid user name or password');
                 }
             );
-    };
+    }
 };
