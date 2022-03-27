@@ -7,4 +7,4 @@ import { ShowIfLoggedDirective } from './show-if-logged.directive';
     exports: [ShowIfLoggedDirective],
     imports: [CommonModule]
 })
-export class showIfLoggedModule { };
+export class ShowIfLoggedModule { };

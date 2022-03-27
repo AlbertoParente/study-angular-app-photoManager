@@ -1,4 +1,4 @@
-import { ElementRef, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { DarkenOnHouverDirective } from './darken-on-houver.directive';
 
 @NgModule({
