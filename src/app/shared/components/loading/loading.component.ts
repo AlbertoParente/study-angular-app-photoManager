@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { LoadingType } from './loading-type';
 
 @Component({
     selector: 'pm-loading',
