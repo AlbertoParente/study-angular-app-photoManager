@@ -21,6 +21,7 @@ export class PhotoDetailsComponent implements OnInit {
         private alertService: AlertService,
         private userService: UserService
     ) { };
+
     ngOnInit(): void {
         this.photoId = this.route.snapshot.params.photoId;
         this.photo$ = this.photoService.findById(this.photoId);
