@@ -20,8 +20,8 @@
                     <button [disable]="commentFrom.invalid" class="btn btn-primary pull-left">Publish</button>
                 </div>
             </div>
-            <ap-vmessage text="Maximun size allowed is 300" *ngIf="commentForm.get('comment').errors?.maxlength">
-            </ap-vmessage>
+            <pm-vmessage text="Maximun size allowed is 300" *ngIf="commentForm.get('comment').errors?.maxlength">
+            </pm-vmessage>
         </form>
     </div>
 </div>
