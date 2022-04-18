@@ -1,10 +1,10 @@
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ErrorHandler, Injectable, Injector } from "@angular/core";
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/core/user/user.service';
-import * as StackTrace from 'stacktrace.js';
-import { ServerLogService } from './server-log-service';
+import { UserService } from '../../core/user/user.service';
+import { ServerLogService } from './server-log.service';
 import { environment } from 'src/environments/environment';
+import * as StackTrace from 'stacktrace.js';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
@@ -27,12 +27,12 @@ export class GlobalErrorHandler implements ErrorHandler {
             .fromError(error)
             .then(stackFrames => {
                 const stackAsString = stackFrames
-                    .map(sf = sf.toString())
+                    .map(sf => sf.toString())
                     .join('\n')
 
                 console.log(message);
                 console.log(stackAsString);
-                console.log('o que será enviado para o servidor')
+                console.log('What will be sent to the server?')
                 serverLogService.log({
                     message,
                     url,

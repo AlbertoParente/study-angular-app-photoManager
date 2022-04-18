@@ -1,17 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AlertModule } from '../shared/components/alert/alert.module';
 import { LoadingModule } from '../shared/components/loading/loading.module';
 import { MenuModule } from '../shared/components/menu/menu.module';
-import { showIfLoggedModule } from '../shared/directives/show-if-logged/show-if-logged.module';
+import { ShowIfLoggedModule } from '../shared/directives/show-if-logged/show-if-logged.module';
 import { RequestInterceptor } from './auth/request.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-    declarations: [HeaderComponent],
+    declarations: [
+        HeaderComponent,
+        FooterComponent
+    ],
     exports: [
         HeaderComponent,
         FooterComponent
@@ -22,7 +25,7 @@ import { HeaderComponent } from './header/header.component';
         AlertModule,
         LoadingModule,
         MenuModule,
-        showIfLoggedModule
+        ShowIfLoggedModule
     ],
     providers: [
         {
