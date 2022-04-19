@@ -1,9 +1,9 @@
 export interface Photo {
     id: number;
-    postGate: Date;
+    postDate: Date;
     url: string;
     description: string;
-    allowsomments: boolean;
+    allowComments: boolean;
     likes: number;
     comments: number;
     userId: number;

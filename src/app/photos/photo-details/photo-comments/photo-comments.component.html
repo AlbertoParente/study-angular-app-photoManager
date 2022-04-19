@@ -17,7 +17,9 @@
             <div class="input-group">
                 <textarea formControlName="comment" class="form-control"></textarea>
                 <div class="input-group-append">
-                    <button [disable]="commentFrom.invalid" class="btn btn-primary pull-left">Publish</button>
+                    <button [disabled]="commentForm.invalid" type="submit" class="btn btn-primary pull-left">
+                        Publish
+                    </button>
                 </div>
             </div>
             <pm-vmessage text="Maximun size allowed is 300" *ngIf="commentForm.get('comment').errors?.maxlength">

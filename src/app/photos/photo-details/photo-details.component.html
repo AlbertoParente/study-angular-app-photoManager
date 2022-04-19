@@ -1,4 +1,4 @@
-<div class="bg-white border" *ngif="(photo$ | async) as photo">
+<div class="bg-white border" *ngIf="(photo$ | async) as photo">
     <div class="row">
         <div class="col-lg-8">
             <pm-photo [url]="photo.url" [description]="photo.description"></pm-photo>
@@ -18,9 +18,9 @@
                 <hr>
             </small>
 
-            <pm-photo-comments *ngIf="photo.allowComments. else warnning" [photoID]="photoId"></pm-photo-comments>
+            <pm-photo-comments *ngIf="photo.allowComments; else warnning" [photoId]="photoId"></pm-photo-comments>
             <ng-template #warnning>
-                <p>User has disabled comments this photo</p>
+                <p>User has disabled comments for this photo</p>
             </ng-template>
         </div>
     </div>

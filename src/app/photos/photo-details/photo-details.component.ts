@@ -7,7 +7,7 @@ import { Photo } from '../photo/photo';
 import { PhotoService } from '../photo/photo.service';
 
 @Component({
-    templateUrl: './photo-detail.component.html'
+    templateUrl: './photo-details.component.html'
 })
 export class PhotoDetailsComponent implements OnInit {
 
@@ -35,7 +35,7 @@ export class PhotoDetailsComponent implements OnInit {
             .removePhoto(this.photoId)
             .subscribe(() => {
                 this.alertService.success('Photo removed!!!', true);
-                this.router.navigate(['/user', this.userService.getUserName], { replaceUrl: true });
+                this.router.navigate(['/user', this.userService.getUserName()], { replaceUrl: true });
             },
                 err => {
                     this.alertService.warning('Could not delete the photo!!!', true);

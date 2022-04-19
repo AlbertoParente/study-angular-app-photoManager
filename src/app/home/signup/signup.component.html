@@ -1,47 +1,80 @@
-<h4 class="text-center"> Register to embrace a new world!</h4>
+<h4 class="text-center">Register to embrace a new world!</h4>
+
 <form #form="ngForm" [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
     <div class="form-group">
         <input #emailInput formControlName="email" class="form-control" placeholder="email" autofocus>
-        <pm-vmessage *ngIf="signupForm.get('email').errors?.required && form.submitted" text="Email is required!">
+        <pm-vmessage
+            *ngIf="signupForm.get('email').errors?.required && (form.submitted || signupForm.get('email').touched)"
+            text="Email is required!">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('email').errors?.email && form.submitted" text="Invalid e-mail">
+        <pm-vmessage
+            *ngIf="signupForm.get('email').errors?.email && (form.submitted || signupForm.get('email').touched)"
+            text="Invalid e-mail">
         </pm-vmessage>
     </div>
+
     <div class="form-group">
         <input formControlName="fullName" class="form-control" placeholder="full name">
-        <pm-vmessage *ngIf="signupForm.get('fullName').errors?.required && form.submitted"
+        <pm-vmessage
+            *ngIf="signupForm.get('fullName').errors?.required && (form.submitted || signupForm.get('fullName').touched)"
             text="Full name is required!">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('fullName').errors?.minlength && form.submitted" text="Minimum length is 2">
+        <pm-vmessage
+            *ngIf="signupForm.get('fullName').errors?.minlength && (form.submitted || signupForm.get('fullName').touched)"
+            text="Mininum length is 2">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('fullName').errors?.maxlength && form.submitted" text="Maximum length is 40">
+        <pm-vmessage
+            *ngIf="signupForm.get('fullName').errors?.maxlength && (form.submitted || signupForm.get('fullName').touched)"
+            text="Maximun length is 40">
         </pm-vmessage>
     </div>
+
     <div class="form-group">
         <input formControlName="userName" class="form-control" placeholder="user name">
-        <pm-vmessage *ngIf="signupForm.get('userName').errors?.required && form.submitted" text="Username is required!">
+        <pm-vmessage
+            *ngIf="signupForm.get('userName').errors?.required&& (form.submitted || signupForm.get('userName').touched)"
+            text="User name is required!">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('userName').errors?.minlength && form.submitted" text="Minimum length is 2">
+        <pm-vmessage
+            *ngIf="signupForm.get('userName').errors?.minlength && (form.submitted || signupForm.get('userName').touched)"
+            text="Mininum length is 2">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('userName').errors?.maxlength && form.submitted" text="Maximum length is 30">
+        <pm-vmessage
+            *ngIf="signupForm.get('userName').errors?.maxlength && (form.submitted || signupForm.get('userName').touched)"
+            text="Maximun length is 30">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('userName').errors?.lowerCase && form.submitted" text="Must be lowercase">
+        <pm-vmessage
+            *ngIf="signupForm.get('userName').errors?.lowerCase && (form.submitted || signupForm.get('userName').touched)"
+            text="Must be lower case">
         </pm-vmessage>
+
         <pm-vmessage text="Username already taken" *ngIf="signupForm.get('userName').errors?.userNameTaken">
         </pm-vmessage>
+
         <small *ngIf="signupForm.get('userName').valid" class="text-success">User available</small>
     </div>
+
     <div class="form-group">
         <input formControlName="password" type="password" class="form-control" placeholder="password">
-        <pm-vmessage *ngIf="signupForm.get('password').errors?.required && form.submitted" text="Password is required!">
+        <pm-vmessage
+            *ngIf="signupForm.get('password').errors?.required && (form.submitted || signupForm.get('password').touched)"
+            text="Password is required!">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('password').errors?.minlength && form.submitted" text="Minimum length is 8">
+        <pm-vmessage
+            *ngIf="signupForm.get('password').errors?.minlength && (form.submitted || signupForm.get('password').touched)"
+            text="Mininum length is 8">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.get('password').errors?.maxlength && form.submitted" text="Maximum length is 14">
+        <pm-vmessage
+            *ngIf="signupForm.get('password').errors?.maxlength && (form.submitted || signupForm.get('password').touched)"
+            text="Maximun length is 18">
         </pm-vmessage>
-        <pm-vmessage *ngIf="signupForm.errors?.userNamePassword" text="Username and password must be different">
+        <pm-vmessage *ngIf="signupForm.errors?.userNamePassword && form.submitted"
+            text="Username and password must be different">
         </pm-vmessage>
     </div>
+
     <button class="btn btn-primary btn-block">Register</button>
+
     <p>Already a user? <a [routerLink]="['']">Sign In!</a></p>
+
 </form>

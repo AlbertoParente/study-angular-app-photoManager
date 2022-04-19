@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
@@ -63,7 +63,7 @@ export class SignUpComponent implements OnInit {
     };
 
     signup() {
-        if (this.signupForm.valid || !this.signupForm.pending) {
+        if (this.signupForm.valid && !this.signupForm.pending) {
             const newUser = this.signupForm.getRawValue() as NewUser;
             this.signUpService
                 .signup(newUser)

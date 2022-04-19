@@ -1,7 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { Photo } from './photo';
 import { PhotoComment } from './photo-comment';
 import { environment } from '../../../environments/environment';
@@ -61,10 +61,6 @@ export class PhotoService {
 
     removePhoto(photoId: number) {
         return this.http.delete(API + '/photos/' + photoId);
-    };
-
-    indById(id: string) {
-        return this.http.get<Photo>(API + '/photos/' + id);
     };
 
     like(photoId: number) {

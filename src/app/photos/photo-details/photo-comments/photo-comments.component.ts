@@ -1,14 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { PhotoComment } from "../../photo/photo-comment";
-import { Input } from "@angular/core";
-import { PhotoService } from "../../photo/photo.service";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from "rxjs";
 import { switchMap, tap } from 'rxjs/operators';
+import { PhotoService } from "../../photo/photo.service";
+import { PhotoComment } from "../../photo/photo-comment";
 
 @Component({
     selector: 'pm-photo-comments',
-    templateUrl: './photo-comment.component.html',
+    templateUrl: './photo-comments.component.html',
     styleUrls: ['photo-comments.css']
 })
 export class PhotoCommentsComponent implements OnInit {
@@ -37,7 +36,6 @@ export class PhotoCommentsComponent implements OnInit {
             .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
             .pipe(tap(() => {
                 this.commentForm.reset();
-                alert('Comentário adicionado com sucesso');
             }));
     };
 };

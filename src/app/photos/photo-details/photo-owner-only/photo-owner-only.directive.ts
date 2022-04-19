@@ -1,6 +1,5 @@
-import { Directive, ElementRef, OnInit, Renderer } from "@angular/core";
+import { Directive, Renderer, OnInit, Input, ElementRef } from "@angular/core";
 import { Photo } from "../../photo/photo";
-import { Input } from "@angular/core";
 import { UserService } from 'src/app/core/user/user.service';
 
 @Directive({
@@ -13,11 +12,11 @@ export class PhotoOwnerOnlyDirective implements OnInit {
     constructor(
         private element: ElementRef<any>,
         private renderer: Renderer,
-        private UserService: UserService
+        private userService: UserService
     ) { };
 
     ngOnInit(): void {
-        this.UserService
+        this.userService
             .getUser()
             .subscribe(user => {
                 if (!user || user.id != this.ownedPhoto.userId) {
