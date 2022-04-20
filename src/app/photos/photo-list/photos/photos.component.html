@@ -2,15 +2,17 @@
     Sorry, but no photos were found with this description!!!
 </p>
 <ol class="list-unstyled">
-    <li *ngfor="let cols of rows" class="row no-gutters">
-        <div *ngfor="let photo of cols" class="col-4" pmDarkenOnHouver>
-            <pm-card [title]="photo.description">
-                <pm-photo [url]="photo.url" [description]="photo.description"></pm-photo>
-                <div class="text-center p-1">
-                    <i aria-hidden="true" class="fa fa-heart-o fa-1x mr-2"></i>{{ photos.likes }}
-                    <i aria-hidden="true" class="fa fa-comment-o fa-1x mr-2 ml-2"></i>{{ photos.comments }}
-                </div>
-            </pm-card>
+    <li *ngFor="let cols of rows" class="row no-gutters p-0">
+        <div *ngFor="let photo of cols" class="col-4" pmDarkenOnHouver>
+            <a [routerLink]="['/p', photo.id]">
+                <pm-card>
+                    <pm-photo [url]="photo.url" [description]="photo.description"></pm-photo>
+                    <div class="text-center p-1">
+                        <i aria-hidden="true" class="fa fa-heart-o fa-1x mr-2"></i>{{ photo.likes }}
+                        <i aria-hidden="true" class="fa fa-comment-o fa-1x mr-2 ml-2"></i>{{ photo.comments }}
+                    </div>
+                </pm-card>
+            </a>
         </div>
     </li>
 </ol>

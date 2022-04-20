@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PhotoModule } from './photo/photo.module';
 import { PhotoFormModule } from './photo-form/photo-form.module';
 import { PhotoListModule } from './photo-list/photo-list.module';
 import { PhotoDetailsModule } from './photo-details/photo-details.module';
-import { PhotoComponent } from './photo/photo.component';
+import { DarkenOnHoverModule } from '../shared/directives/darken-on-hover/darken-on-hover.module';
 
 @NgModule({
-    declarations: [PhotoComponent],
     imports: [
         PhotoModule,
         PhotoFormModule,
         PhotoListModule,
-        CommonModule,
+        DarkenOnHoverModule,
         PhotoDetailsModule
-    ],
-    exports: [PhotoComponent]
+    ]
 })
 export class PhotosModule { };

@@ -1,9 +1,9 @@
 import { Directive, ElementRef, HostListener, Input, Renderer } from '@angular/core';
 
 @Directive({
-    selector: '[pmDarkenOnHouver]'
+    selector: '[pmDarkenOnHover]'
 })
-export class DarkenOnHouverDirective {
+export class DarkenOnHoverDirective {
 
     @Input() brightness = '70%';
 
