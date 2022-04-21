@@ -4,7 +4,7 @@ import { PlatformDetectorService } from 'src/app/core/platform-detector/platform
 @Directive({
     selector: '[immediateClick]'
 })
-export class immediateClickDirective implements OnInit {
+export class ImmediateClickDirective implements OnInit {
 
     constructor(
         private element: ElementRef<any>,

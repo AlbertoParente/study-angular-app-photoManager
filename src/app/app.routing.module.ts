@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/auth/auth.guard';
 import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
+import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,7 @@ const routes: Routes = [
     },
     {
         path: 'user/:userName',
+        pathMatch: 'full',
         component: PhotoListComponent,
         resolve: {
             photos: PhotoListResolver
@@ -37,7 +39,7 @@ const routes: Routes = [
     },
     {
         path: 'p/:photoId',
-        component: PhotoFormComponent,
+        component: PhotoDetailsComponent,
         data: {
             title: 'Photo Detail'
         }

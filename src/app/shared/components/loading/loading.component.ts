@@ -1,9 +1,7 @@
-
-import { LoadingService } from "./loading.service";
-import { Observable } from "rxjs";
-
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
+import { LoadingService } from "./loading.service";
 
 @Component({
     selector: 'pm-loading',
@@ -19,6 +17,6 @@ export class LoadingComponent implements OnInit {
     ngOnInit(): void {
         this.loading$ = this.loadingService
             .getLoading()
-            .pipe(map(LoadingType => LoadingType.valueOf()))
+            .pipe(map(loadingType => loadingType.valueOf()))
     };
 };

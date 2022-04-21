@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { NavigationStart, Router } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 import { Subject } from "rxjs";
 import { AlertType, Alert } from "./alert";
 
@@ -49,22 +49,5 @@ export class AlertService {
 
     clear() {
         this.alertSubject.next(null);
-    };
-
-    getAlertClass(alert: Alert) {
-
-        if (!alert) return '';
-
-        switch (alert.alertType) {
-
-            case AlertType.DANGER:
-                return 'alert alert-danger'
-            case AlertType.INFO:
-                return 'alert alert-info'
-            case AlertType.SUCCESS:
-                return 'alert alert-success'
-            case AlertType.WARNING:
-                return 'alert alert-warning'
-        };
     };
 };

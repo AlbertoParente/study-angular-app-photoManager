@@ -1,15 +1,12 @@
 import { Component, Input } from "@angular/core";
-import { Subject } from 'rxjs';
-import { Alert } from './alert';
+import { Alert, AlertType } from './alert';
 import { AlertService } from './alert.service';
 
-Component({
+@Component({
     selector: 'pm-alert',
     templateUrl: './alert.component.html'
 })
 export class AlertComponent {
-
-    alertSubject: Subject<Alert> = new Subject<Alert>();
 
     @Input() timeout = 3000;
     alerts: Alert[] = [];
@@ -30,5 +27,22 @@ export class AlertComponent {
 
     removeAlert(alertToRemove: Alert) {
         this.alerts = this.alerts.filter(alert => alert != alertToRemove);
+    };
+
+    getAlertClass(alert: Alert) {
+
+        if (!alert) return '';
+
+        switch (alert.alertType) {
+
+            case AlertType.DANGER:
+                return 'alert alert-danger';
+            case AlertType.INFO:
+                return 'alert alert-info';
+            case AlertType.SUCCESS:
+                return 'alert alert-success';
+            case AlertType.WARNING:
+                return 'alert alert-warning';
+        };
     };
 };
