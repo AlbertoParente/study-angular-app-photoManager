@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../core/user/user.service';
 import { ServerLogService } from './server-log.service';
 import { environment } from 'src/environments/environment';
-import * as StackTrace from 'stacktrace.js';
+import * as StackTrace from 'stacktrace-js';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
