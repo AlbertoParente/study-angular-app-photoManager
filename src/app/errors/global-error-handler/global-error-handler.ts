@@ -1,4 +1,4 @@
-import { ErrorHandler, Injectable, Injector } from "@angular/core";
+import { ErrorHandler, Injectable, Injector } from '@angular/core';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from '../../core/user/user.service';

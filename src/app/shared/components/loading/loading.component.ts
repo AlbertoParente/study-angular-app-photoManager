@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { LoadingService } from "./loading.service";
+import { LoadingService } from './loading.service';
 
 @Component({
     selector: 'pm-loading',

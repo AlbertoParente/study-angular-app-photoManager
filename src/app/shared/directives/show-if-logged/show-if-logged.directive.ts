@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, Renderer } from "@angular/core";
+import { Directive, ElementRef, OnInit, Renderer } from '@angular/core';
 import { UserService } from 'src/app/core/user/user.service';
 
 @Directive({

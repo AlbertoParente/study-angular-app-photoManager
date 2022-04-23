@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
-import { PhotoService } from "../../photo/photo.service";
-import { PhotoComment } from "../../photo/photo-comment";
+import { PhotoService } from '../../photo/photo.service';
+import { PhotoComment } from '../../photo/photo-comment';
 
 @Component({
     selector: 'pm-photo-comments',

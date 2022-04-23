@@ -1,4 +1,4 @@
-import { ValidatorFn, FormGroup } from "@angular/forms";
+import { ValidatorFn, FormGroup } from '@angular/forms';
 
 export const userNamePassword: ValidatorFn = (formGroup: FormGroup) => {
     const userName = formGroup.get('userName').value;
