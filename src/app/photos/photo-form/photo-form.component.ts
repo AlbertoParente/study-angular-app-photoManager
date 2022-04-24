@@ -13,6 +13,7 @@ import { PhotoService } from '../photo/photo.service';
     styleUrls: ['./photo-form.component.css']
 })
 export class PhotoFormComponent implements OnInit {
+
     photoForm: FormGroup;
     file: File;
     preview: string;

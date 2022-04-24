@@ -14,7 +14,6 @@ export class PhotoCommentsComponent implements OnInit {
 
     @Input() photoId: number;
     commentForm: FormGroup;
-
     comments$: Observable<PhotoComment[]>;
 
     constructor(

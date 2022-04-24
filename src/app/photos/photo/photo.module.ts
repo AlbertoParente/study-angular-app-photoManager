@@ -11,5 +11,4 @@ import { PhotoComponent } from './photo.component';
     ],
     exports: [PhotoComponent]
 })
-
 export class PhotoModule { };
